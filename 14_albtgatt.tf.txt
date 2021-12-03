@@ -1,0 +1,5 @@
+resource "aws_lb_target_group_attachment" "hun_albtgatt" {
+  target_group_arn = aws_lb_target_group.hun_albtg.arn
+  target_id        = aws_instance.hun_web.id
+  port             = 80
+}

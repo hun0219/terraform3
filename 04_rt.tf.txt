@@ -1,0 +1,11 @@
+resource "aws_route_table" "hun_rt" {
+  vpc_id = aws_vpc.hun_vpc.id
+
+  route {
+      cidr_block = "0.0.0.0/0"
+      gateway_id = aws_internet_gateway.hun_ig.id
+  }
+  tags = {
+      "Name" = "hun-rt"
+  }
+}

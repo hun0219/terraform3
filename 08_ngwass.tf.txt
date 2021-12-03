@@ -1,0 +1,19 @@
+resource "aws_route_table_association" "hun_ngwass_pria" {
+  subnet_id = aws_subnet.hun_pria.id
+  route_table_id = aws_route_table.hun_ngwrt.id
+}
+
+resource "aws_route_table_association" "hun_ngwass_pric" {
+  subnet_id = aws_subnet.hun_pric.id
+  route_table_id = aws_route_table.hun_ngwrt.id
+}
+
+resource "aws_route_table_association" "hun_ngwass_pridba" {
+  subnet_id = aws_subnet.hun_pridba.id
+  route_table_id = aws_route_table.hun_ngwrt.id
+}
+
+resource "aws_route_table_association" "hun_ngwass_prdibc" {
+  subnet_id = aws_subnet.hun_pridbc.id
+  route_table_id = aws_route_table.hun_ngwrt.id
+}

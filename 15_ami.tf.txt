@@ -1,0 +1,7 @@
+resource "aws_ami_from_instance" "hun_ami" {
+  name = "hun-ami"
+  source_instance_id = aws_instance.hun_web.id
+  depends_on = [
+    aws_instance.hun_web
+  ]
+}

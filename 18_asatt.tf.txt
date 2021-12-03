@@ -1,0 +1,4 @@
+resource "aws_autoscaling_attachment" "hun_asatt" {
+  autoscaling_group_name = aws_autoscaling_group.hun_atsg.id
+  alb_target_group_arn = aws_lb_target_group.hun_albtg.arn
+}

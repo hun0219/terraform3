@@ -1,0 +1,9 @@
+resource "aws_route_table_association" "hun_igas_puba" {
+  subnet_id = aws_subnet.hun_puba[0].id
+  route_table_id = aws_route_table.hun_rt.id
+}
+
+resource "aws_route_table_association" "hun_igas_pubc" {
+  subnet_id = aws_subnet.hun_pubc.id
+  route_table_id = aws_route_table.hun_rt.id
+}

@@ -1,0 +1,14 @@
+resource "aws_lb" "hun_alb" {
+  name = "hun-alb"
+  internal = false
+  load_balancer_type = "application"
+  security_groups = [aws_security_group.hun_sg.id]
+  subnets = [aws_subnet.hun_puba.id,aws_subnet.hun_pubc.id]
+  tags = {
+      "Name" = "hun-alb"
+  }
+}
+
+output "dns_name" {
+  value = aws_lb.hun_alb.dns_name
+}

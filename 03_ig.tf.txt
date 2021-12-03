@@ -1,0 +1,7 @@
+resource "aws_internet_gateway" "hun_ig" {
+  vpc_id = aws_vpc.hun_vpc.id
+
+  tags = {
+      "Name" = "hun-ig"
+  }
+}

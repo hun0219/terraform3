@@ -1,0 +1,11 @@
+resource "aws_eip" "hun_ngw_ip" {
+  vpc = true
+}
+
+resource "aws_nat_gateway" "hun_ngw" {
+  allocation_id = aws_eip.hun_ngw_ip.id
+  subnet_id = aws_subnet.hun_puba.id
+  tags = {
+      "Name" = "hun-ngw"
+  }
+}

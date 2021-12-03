@@ -1,0 +1,4 @@
+resource "aws_key_pair" "hun_key"{
+  key_name = "hun1-key"
+  public_key = file("../../.ssh/hun-key.pub")
+}

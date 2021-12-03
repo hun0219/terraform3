@@ -1,0 +1,13 @@
+resource "aws_launch_configuration" "hun_lacf" {
+  name = "hun-ami"
+  image_id = aws_ami_from_instance.hun_ami.id
+  instance_type = "t2.micro"
+  iam_instance_profile = "admin_role"
+  security_groups = [aws_security_group.hun_sg.id]
+  key_name = "hun1-key"
+  user_data =<<-EOF
+                #!/bin/bash
+                systemctl start httpd
+                systemctl enable httpd
+                EOF
+}
